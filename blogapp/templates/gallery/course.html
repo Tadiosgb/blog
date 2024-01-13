@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery</title>
+  <link rel="stylesheet" href="css/course.css">
+  <style>
+   
+  </style>
+</head>
+
+<body>
+  <div class="app-bar">
+    <div class="logo"style="background-color:white">
+      <img src="images/logo1.png" alt="Logo">
+    </div>
+    <h1>WoW!!! PHOTOGRAPHER ACADEMY</h1>
+    <ul class="nav-links">
+      <li><a href="home.html" class="nav-link" data-section="home">Home</a></li>
+      <li><a href="gallery.html" class="nav-link" data-section="gallery">Gallery</a></li>
+      <li><a href="course.html" class="nav-link" data-section="course">Course</a></li>
+      <li><a href="about.html" class="nav-link" data-section="about">About Us</a></li>
+      <li><a href="contact.html" class="nav-link" data-section="contact">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <div id="content">
+    <h1 style="margin-left:400px;">Our courses</h1>
+    <div class="text-card-container">
+      <div class="text-card">
+        <h3>Photography Basics</h3>
+        <p> Understanding your camera's settings, functions, and features.</p>
+       
+        <div class="additional-text">Learn the fundamentals of photography in this comprehensive course.</div>
+        <a href="#" class="view-all" onclick="toggleAdditionalText(1)">View All</a>
+      </div>
+
+      <div class="text-card">
+        <h3>Portrait Photography</h3>
+        <p>Techniques for capturing compelling portraits, including posing, lighting, and working with models.</p>
+       
+        <div class="additional-text">Master the art of capturing stunning portraits with professional techniques.</div>
+        <a href="#" class="view-all" onclick="toggleAdditionalText(2)">View All</a>
+      </div>
+
+      <div class="text-card">
+        <h3>Landscape Photography</h3>
+        <p> Tips for capturing stunning landscapes, including composition, use of light, and understanding natural elements.</p>
+       
+        <div class="additional-text">Explore the beauty of landscapes and learn techniques to capture breathtaking moments.</div>
+        <a href="#" class="view-all" onclick="toggleAdditionalText(3)">View All</a>
+      </div>
+
+      <div class="text-card">
+        <h3>Advanced Editing</h3>
+        <p>Advanced editing techniques can take your photographs to the next level by allowing you to unleash your creativity and enhance the visual impact of your images. Here are some advanced editing topics that you might find useful:
+
+        </p>
+       
+        <div class="additional-text">Enhance your photos with advanced editing techniques using industry-standard software.</div>
+        <a href="#" class="view-all" onclick="toggleAdditionalText(4)">View All</a>
+      </div>
+    </div>
+
+    <div class="text-card-container">
+      <div class="text-card">
+        <h3>Studio Lighting Mastery</h3>
+        <p>Studio lighting mastery involves understanding and effectively using artificial lighting equipment in a controlled studio environment to create desired lighting effects. Here are some key topics that you might explore to master studio lighting:</p>
+       
+        <div class="additional-text">Learn the art and science behind studio lighting for professional photography.</div>
+        <a href="#" class="view-all" onclick="toggleAdditionalText(5)">View All</a>
+      </div>
+
+      <div class="text-card">
+        <h3>Street Photography</h3>
+        <p>Techniques for capturing candid moments in urban environments, including composition, storytelling, and overcoming challenges.</p>
+       
+        <div class="additional-text">Capture the essence of the streets with unique street photography techniques.</div>
+        <a href="#" class="view-all" onclick="toggleAdditionalText(6)">View All</a>
+      </div>
+
+      <div class="text-card">
+        <h3>Nature and Wildlife</h3>
+        <p>Nature and wildlife photography encompasses capturing images of animals, plants, landscapes, and other elements of the natural world.</p>
+       
+        <div class="additional-text">Immerse yourself in nature and wildlife photography with expert guidance.</div>
+        <a href="#" class="view-all" onclick="toggleAdditionalText(7)">View All</a>
+      </div>
+
+      <div class="text-card">
+        <h3>Mobile Photography</h3>
+        <p>Mobile photography refers to the practice of capturing photographs using a mobile device, such as a smartphone or tablet. With the advancement of technology, mobile devices have become increasingly capable of producing high-quality images.</p>
+       
+        <div class="additional-text">Discover the art of photography using your mobile device and editing apps.</div>
+        <a href="#" class="view-all" onclick="toggleAdditionalText(8)">View All</a>
+      </div>
+    </div>
+
+    <div class="text-card-container">
+      <div class="text-card">
+        <h3>Architectural Photography</h3>
+        <p>Architectural photography focuses on capturing images of buildings, structures, and architectural elements</p>
+       
+        <div class="additional-text">Capture the beauty of architecture and urban spaces with specialized techniques.</div>
+        <a href="#" class="view-all" onclick="toggleAdditionalText(9)">View All</a>
+      </div>
+
+      <div class="text-card">
+        <h3>Event Photography</h3>
+        <p>Event photography involves capturing images of various types of events, such as weddings, concerts, conferences, parties, and sports competitions. </p>
+       
+        <div class="additional-text">Learn the skills needed to capture memorable moments at various events and occasions.</div>
+        <a href="#" class="view-all" onclick="toggleAdditionalText(10)">View All</a>
+      </div>
+
+      <div class="text-card">
+        <h3>Travel Photography</h3>
+        <p>Travel photography is about capturing the essence of a place, its people, culture, landscapes, and architecture. It allows you to document your experiences, share them with others, and create lasting memories. </p>
+        <div class="additional-text">Explore the world of travel photography and document your journeys with captivating images.</div>
+        <a href="#" class="view-all" onclick="toggleAdditionalText(11)">View All</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-column">
+      <h3>About Photographer Company</h3>
+       
+      <p>Take all our courses to be an advanced photographer!!!.Be smart!! in the era of goat do not be a sheep!!!</p>
+    </div>
+    <div class="footer-column">
+      <h3>Subscribe to Our Newsletter</h3>
+      <form>
+        <input type="email" placeholder="Your email address">
+        <button type="submit" onclick="changeButtonColor()">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-column">
+      <p>&copy; 2024 Photographer Company. All rights reserved.</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleAdditionalText(courseNumber) {
+      var currentCard = document.querySelector('.text-card:nth-child(' + courseNumber + ')');
+      currentCard.classList.toggle('active');
+    }
+
+    function changeButtonColor() {
+      var subscribeButton = document.querySelector('.footer-column form button');
+      subscribeButton.style.backgroundColor = "#00f"; /* Change to the desired blue color */
+    }
+  </script>
+</body>
+
+</html>

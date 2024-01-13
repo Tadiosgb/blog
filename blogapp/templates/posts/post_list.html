@@ -1,0 +1,57 @@
+{% extends 'posts/base.html' %}
+{% block content %}
+    <h1>Post List</h1>
+    <!-- Your content goes here -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Text</th>
+                <th>Auther</th>
+                <th>created at </th>
+                <th>actions</th>  <!-- Added Actions column -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts %}
+            <tr>
+                <td>{{ post.title }}</td>
+                <td>{{ post.text }}</td>
+                <td>{{ post.author}}</td>
+                <td>{{ post.created_at}}</td>
+                <td class="align-middle">
+                    <div class="d-flex justify-content-end">
+                        <a href="{% url 'blogapp:post_update' pk=post.pk %}" class="btn btn-primary btn-sm me-2">Edit</a>
+                        <a href="#" class="btn btn-danger btn-sm" onclick="deletePost('{{ post.pk }}')">Delete</a>
+                    </div>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">No expenses found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script>
+        function deletePost(pk) {
+            if (pk) {
+                if (confirm('Are you sure you want to delete post with ID: ' + pk + '?')) {
+                    const form = document.createElement('form');
+                    form.method = 'POST';
+                    form.action = '{% url "blogapp:post_delete" pk=0 %}'.replace('0', pk);
+        
+                    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                    const csrfInput = document.createElement('input');
+                    csrfInput.type = 'hidden';
+                    csrfInput.name = 'csrfmiddlewaretoken';
+                    csrfInput.value = csrfToken;
+        
+                    form.appendChild(csrfInput);
+                    document.body.appendChild(form);
+                    form.submit();
+                }
+            }
+        }
+        </script>
+{% endblock %}

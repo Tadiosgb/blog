@@ -1,0 +1,65 @@
+{% extends 'posts/base1.html' %}
+
+{% block title %}Front Page{% endblock %}
+
+{% block content %}
+    <h1>Welcome to the Front Page!</h1>
+
+    <div class="content" id="post-container">
+        {% for post in posts %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{ post.text }}</p>
+                    <p class="card-text"><small class="text-muted">Author: {{ post.author }} | Published at: {{ post.published_at }}</small></p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Add your JavaScript links or scripts here -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var latestPostTime = '{{ posts.0.published_at|date:"c" }}';  // Get the timestamp of the latest post
+
+        // Periodically check for new posts
+        function checkForNewPosts() {
+            $.ajax({
+                url: '/front-posts/',
+                method: 'GET',
+                success: function (data) {
+                    if (data.new_posts > 0) {
+                        updateNotificationIcon();
+                        loadNewPosts();  // Load new posts if any
+                    }
+                },
+                error: function (error) {
+                    console.error('Error checking for new posts:', error);
+                }
+            });
+        }
+
+        // Update the notification icon
+        function updateNotificationIcon() {
+            var notificationIcon = $('#notification-icon');
+            notificationIcon.addClass('text-danger');  // Add a visual cue for new posts
+        }
+
+        // Load new posts dynamically
+        function loadNewPosts() {
+            $.ajax({
+                url: '/front-posts/',
+                method: 'GET',
+                success: function (data) {
+                    $('#post-container').html(data);
+                },
+                error: function (error) {
+                    console.error('Error loading new posts:', error);
+                }
+            });
+        }
+
+        // Check for new posts every 30 seconds
+        setInterval(checkForNewPosts, 30000);
+    </script>
+{% endblock %}

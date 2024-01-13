@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery</title>
+  <link rel="stylesheet" href="css/gallery.css">
+  <style>
+   
+  </style>
+</head>
+<body>
+  <div class="app-bar">
+    <div class="logo"style="background-color:white">
+      <img src="images/logo1.png" alt="Logo">
+    </div>
+    <h1>WoW!!! PHOTOGRAPHER ACADEMY</h1>
+    <ul class="nav-links">
+      <li><a href="home.html" class="nav-link" data-section="home">Home</a></li>
+      <li><a href="gallery.html" class="nav-link" data-section="gallery">Gallery</a></li>
+      <li><a href="course.html" class="nav-link" data-section="course">Course</a></li>
+      <li><a href="about.html" class="nav-link" data-section="about">About Us</a></li>
+      <li><a href="contact.html" class="nav-link" data-section="contact">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <div id="content">
+    <h2 id="gallery-title">Photo Gallery</h2>
+    <div class="gallery-container">
+      <div class="card" data-category="allphotos">
+        <img src="images/gallery1.jpg" alt="Image 1">
+        <p class="description">A group of aspiring photographers eagerly engaged in a hands-on workshop at the photographer academy. Under the guidance of experienced mentors, they learn the technical aspects of camera settings and composition, honing their skills to capture stunning visuals that tell compelling stories.</p>
+        <div class="additional-text" id="additional-content1">A glimpse into the photographer academy's inspiring workshops, where creativity knows no bounds.</div>
+        <a href="#" class="view-all-button" onclick="toggleAdditionalText(1)">View All</a>
+      </div>
+      <div class="card" data-category="sergphoto">
+        <img src="images/gallery2.jpg" alt="Image 2">
+        <p class="description"> In this image, the photographer academy's classroom buzzes with creative energy. Students, armed with their cameras and notebooks, participate in a lively discussion led by industry professionals. They delve into the art of visual storytelling, exploring different genres and techniques to express their unique perspectives.</p>
+        <div class="additional-text" id="additional-content2">Students at the photographer academy eagerly absorb the art of visual storytelling from industry professionals.</div>
+        <a href="#" class="view-all-button" onclick="toggleAdditionalText(2)">View All</a>
+      </div>
+      <div class="card" data-category="familyphoto">
+        <img src="images/gallery3.jpg" alt="Image 3">
+        <p class="description">Amidst a picturesque outdoor setting, students from the photographer academy embark on a practical field trip. With their cameras slung over their shoulders, they explore the surroundings, eagerly applying the knowledge gained in the classroom. Their keen eyes seek out captivating subjects, capturing the beauty of nature through their lenses.</p>
+        <div class="additional-text" id="additional-content3">Exploring the beauty of nature through the lenses of photographer academy students.</div>
+        <a href="#" class="view-all-button" onclick="toggleAdditionalText(3)">View All</a>
+      </div>
+      <!-- Add more image cards with an appropriate data-category attribute -->
+    </div>
+    <div class="gallery-container">
+        <div class="card" data-category="allphotos">
+          <img src="images/gallery4.jpg" alt="Image 1">
+          <p class="description">Inside a state-of-the-art studio, aspiring photographers at the academy experiment with lighting and composition. Under the expert guidance of their mentors, they learn the intricacies of portrait photography. The atmosphere is filled with excitement as they meticulously set up backdrops, arrange props, and create stunning portraits that reflect their growing proficiency.</p>
+          <div class="additional-text" id="additional-content1">Mastering the art of portrait photography in the state-of-the-art studio of the photographer academy.</div>
+          <a href="#" class="view-all-button" onclick="toggleAdditionalText(1)">View All</a>
+        </div>
+        <div class="card" data-category="sergphoto">
+          <img src="images/gallery5.jpg" alt="Image 2">
+          <p class="description">In this image, a group of photographer academy students gathers around a computer screen, engrossed in a post-processing session. Guided by their instructor, they learn advanced editing techniques to enhance their images, bringing out the full potential of their captured moments.</p>
+          <div class="additional-text" id="additional-content2">Students at the photographer academy engaged in an immersive guest lecture by a renowned photographer.</div>
+          <a href="#" class="view-all-button" onclick="toggleAdditionalText(2)">View All</a>
+        </div>
+        <div class="card" data-category="familyphoto">
+          <img src="images/gallery6.jpg" alt="Image 3">
+          <p class="description">The photographer academy's gallery showcases a collection of remarkable photographs created by its talented students. This image captures a vibrant exhibition opening, where visitors marvel at the diverse range of images on display. The academy provides a platform for emerging photographers to showcase their work and gain recognition.</p>
+          <div class="additional-text" id="additional-content3">Enhancing images to perfection: photographer academy students learn advanced editing techniques.</div>
+          <a href="#" class="view-all-button" onclick="toggleAdditionalText(3)">View All</a>
+        </div>
+        <!-- Add more image cards with an appropriate data-category attribute -->
+      </div>
+      <div class="gallery-container">
+        <div class="card" data-category="allphotos">
+          <img src="images/gallery7.jpg" alt="Image 1">
+          <p class="description">As the golden hour bathes the landscape in a warm glow, photographer academy students set up tripods and adjust their camera settings. This image depicts a practical outdoor workshop focused on landscape photography. With guidance from their mentors, they learn to capture the grandeur of nature, utilizing techniques such as long exposures and composition principles.</p>
+          <div class="additional-text" id="additional-content1">The photographer academy's gallery showcases breathtaking photographs, a testament to student talent.</div>
+          <a href="#" class="view-all-button" onclick="toggleAdditionalText(1)">View All</a>
+        </div>
+        <div class="card" data-category="sergphoto">
+          <img src="images/gallery8.jpg" alt="Image 2">
+          <p class="description">Behind the scenes at the photographer academy's collaborative project, students excitedly brainstorm ideas and plan their shoot. With different roles assigned, they work together seamlessly, pooling their creativity and skills to bring their vision to life. This image captures the essence of teamwork and camaraderie fostered within the academy's vibrant community.</p>
+          <div class="additional-text" id="additional-content2">Capturing the grandeur of landscapes under the guidance of experienced mentors at the photographer academy.</div>
+          <a href="#" class="view-all-button" onclick="toggleAdditionalText(2)">View All</a>
+        </div>
+        <div class="card" data-category="familyphoto">
+          <img src="images/gallery9.jpg" alt="Image 3">
+          <p class="description"> In this image, a photographer academy instructor passionately shares their knowledge and expertise during a captivating seminar. Surrounded by eager students, the instructor imparts invaluable insights, discussing the latest trends, techniques, and industry practices.</p>
+          <div class="additional-text" id="additional-content3">The photographer academy's annual showcase: a visual journey through the artistic growth of its students.</div>
+          <a href="#" class="view-all-button" onclick="toggleAdditionalText(3)">View All</a>
+        </div>
+        <!-- Add more image cards with an appropriate data-category attribute -->
+      </div>
+    <!-- Repeat the structure for other image containers -->
+  </div>
+
+  <div class="footer">
+    <div class="footer-column">
+      <h3>About Photographer Company</h3>
+      <p>Take all our courses to be an advanced photographer!!!.Be smart!! in the era of goat do not be a sheep!!!</p>
+    </div>
+    <div class="footer-column">
+      <h3>Subscribe to Our Newsletter</h3>
+      <form>
+        <input type="email" placeholder="Your email address">
+        <button type="submit" onclick="changeButtonColor()">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-column">
+      <p>&copy; 2024 Photographer Company. All rights reserved.</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleAdditionalText(imageNumber) {
+      var additionalContent = document.getElementById("additional-content" + imageNumber);
+      additionalContent.style.display = additionalContent.style.display === "none" ? "block" : "none";
+    }
+
+    function changeButtonColor() {
+      var subscribeButton = document.querySelector('.footer-column form button');
+      subscribeButton.style.backgroundColor = "#00f"; /* Change to the desired blue color */
+    }
+  </script>
+</body>
+</html>

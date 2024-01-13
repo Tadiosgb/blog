@@ -1,0 +1,26 @@
+{% extends 'posts/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <form method="post" class="needs-validation" novalidate>
+            {% csrf_token %}
+            <h1 class="mb-4">{% if post.id %}Update Post{% else %}New Post{% endif %}</h1>
+            
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ field.errors|striptags }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            
+            <button class="btn btn-primary" type="submit" style="border-radius: 20px; background-color: #367fa9; margin-left: 150px;">
+                {% if post.id %}Update{% else %}Create{% endif %}
+            </button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,253 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('b2er.jpg');
+    background-size: cover;
+    overflow-x: hidden;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: transparent transparent; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  }
+  
+  /* For WebKit browsers (Chrome, Safari) */
+  body::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Color of the scrollbar thumb */
+  }
+  
+.app-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.app-bar img {
+  height: 40px;
+}
+
+.app-bar h1 {
+  margin: 0;
+}
+
+.nav-links {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 10px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.nav-links a:hover {
+  background-color: #555;
+}
+
+.section-two {
+  text-align: center;
+  z-index: 500;
+  margin-top: 80px; /* Adjusted margin to avoid overlap with app bar */
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  margin: 0 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  text-align: center;
+  background-color: black;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+  color:white;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  max-width: 250px;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin-top: 10px;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.container h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.container span {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.insta-imgs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.insta-imgs div {
+  flex: 1;
+  margin: 0 5px;
+  position: relative;
+}
+
+.insta-imgs img {
+  width: 100%;
+  height: auto;
+  max-width: 250px;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.icon-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-overlay i {
+  font-size: 24px;
+}
+
+.insta-imgs div:hover .icon-overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    z-index: 1000;
+    margin-top: 100px;
+  }
+
+  .footer-column {
+    display: inline-block;
+    margin: 10px;
+  }
+
+  .footer-column h3 {
+    margin: 0;
+  }
+
+  .footer-column p {
+    margin: 10px 0 0 0;
+  }
+
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-column form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-column form input {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .footer-column form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .footer-column form button:hover {
+    background-color: #00f;
+  }
+
+#additional-content {
+  display: none;
+  margin-top: 20px;
+}
+
+#additional-content p {
+  text-align: left;
+  margin: 10px 0;
+}
+
+#view-all-button {
+  background-color: blue;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#view-all-button:hover {
+  background-color: cyan;
+}

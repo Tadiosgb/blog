@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Your Site Title{% endblock %}</title>
+
+    <!-- Bootstrap CSS (Assuming it's available in your project) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Font Awesome (Assuming it's available in your project) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <style>
+        @media (max-width: 767px) {
+            .sidebar {
+                left: -300px !important; /* Hide sidebar by default on small screens */
+            }
+
+            .main-content {
+                margin-left: 0 !important; /* Ensure main content takes full width */
+            }
+
+            .sidebar.hide {
+                left: 0 !important; /* Override hide class for small screens */
+            }
+        }
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .user-header {
+            background-color: #417690;
+            color: #f5dd5d;
+            padding: 10px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .user-header h1 {
+            font-size: 18px;
+            margin-left: 10px;
+        }
+
+        .user-links {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .user-links li {
+            margin-left: 10px;
+            color: white;
+            cursor: default;
+        }
+
+        .user-links li a {
+            color: white;
+            text-decoration: underline;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .user-links li a:hover {
+            text-decoration: none;
+        }
+
+        .user-links li a::after {
+            content: "";
+        }
+
+        .user-links li a::before {
+            margin-right: 5px;
+        }
+
+        .nav-header {
+            background-color: #79aec8;
+            padding: 10px;
+            text-align: center;
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-header ol {
+            background-color: #79aec8;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+        }
+
+        .nav-header ol li {
+            margin-right: 5px;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 300px;
+            background-color: #f9fafc;;
+            color: black;
+            box-sizing: border-box;
+            height: 100vh;
+            position: fixed;
+            top: 100px;
+            left: 0;
+            overflow-y: auto;
+            border-right: 1px solid #ddd;
+            transition: all 0.3s;
+        }
+
+        .sidebar.hide {
+            left: -300px;
+        }
+
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .sidebar-item a {
+            color: black;
+            text-decoration: none;
+            position: relative;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .sidebar-item a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .add-link {
+            color: #417690;
+            text-decoration: none;
+            margin-left: auto;
+        }
+
+        .icon {
+            font-size: 12px;
+            margin-right: 5px;
+            color: #3bb757;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            margin-left: 10px;
+            margin-top: 50px;
+            transition: margin-left 0.3s;
+        }
+
+        .sidebar.hide + .main-content {
+            margin-left: -200px;
+        }
+
+        .navbar-toggler {
+            background-color: transparent !important;
+            border: none !important;
+        }
+
+        .navbar-toggler-icon {
+            color: #fff !important;
+        }
+
+        /* Adjustments for Bootstrap Navbar */
+        .navbar {
+            background-color: #444;
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: #fff;
+            pointer-events: none;
+            display: flex; /* Display flex to align items */
+            align-items: center; /* Center items vertically */
+        }
+
+        .navbar-nav .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .navbar-nav .active {
+            text-decoration: underline;
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        .navbar-nav .nav-link.color-white {
+            color: white;
+            text-decoration: underline;
+            pointer-events: auto;
+        }
+
+        .navbar-nav .nav-link.color-white:hover {
+            text-decoration: none;
+        }
+
+        .sidebar-border {
+            border-left: 1px solid #3bb757;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="user-header">
+        <div style="display: flex; align-items: center;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleContent"
+        aria-controls="navbarToggleContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+            <i class="fas fa-bars"></i> <!-- Use the "bars" icon from Font Awesome -->
+        </span>
+    </button>
+            <h1 style="font-size: 22px; margin-left: 10px;">Goverment Transparency</h1>
+        </div>
+        <div>
+            <ul class="user-links">
+                <li class="nav-item">
+                    <span style="color: #f5dd5d;">Welcome, Tadios</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="color-white"> VIEW SITE</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="color-white"> CHANGE PASSWORD</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="color-white">LOGOUT</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="nav-header">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#" style="color: white;">Home&nbsp;<span style="color: white;">&gt;</span></a></li>
+            <li class="breadcrumb-item"><a href="#" style="color: white;">Authentication&nbsp;<span style="color: white;">&gt;</span></a></li>
+            <li class="breadcrumb-item active" aria-current="page"><span style="color: white;">User</span></li>
+        </ol>
+    </div>
+    <div class="container">
+        <div class="sidebar sidebar-border">
+            <!-- Sidebar content -->
+            <div class="sidebar-item">
+                <a href="#" class="sidebar-link">
+                    Posts
+                    <a href="#" class="add-link"><span class="icon"><i class="fas fa-plus"></i></span>Add</a>
+                </a>
+            </div>
+           
+            <!-- Add more sidebar items as needed -->
+        </div>
+
+        <div class="main-content">
+            <!-- Main content -->
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Assuming it's available in your project) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome (Assuming it's available in your project) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+
+    <script>
+        // Toggle sidebar on button click
+        $(document).ready(function () {
+            $('.navbar-toggler').on('click', function () {
+                $('.sidebar').toggleClass('hide');
+                $('.main-content').toggleClass('full-width');
+            });
+        });
+    </script>
+</body>
+
+</html>
